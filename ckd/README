@@ -1,0 +1,16 @@
+This directory contains source code and utilities developed for
+time series clustering of Chronic Kidney Disease patients by
+Rahul Tejwani and Biplap Sarkar.
+
+Directory/File 		Description
+
+DB_pull.py		Utility to create timeseries from DB for each key
+
+CKDTimeSeries		Eclipse project to extract timeseries for each 
+			key having K entries, K=10 in this case.
+
+SAX			R files for clustering using SAX
+
+files			Contains timeseries file
+
+tools			Contains utilities used in the project
