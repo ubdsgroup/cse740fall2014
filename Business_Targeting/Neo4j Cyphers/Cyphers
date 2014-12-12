@@ -1,0 +1,14 @@
+//Loading data from CSV to Neo4j
+
+LOAD CSV WITH HEADERS FROM "file:////Users/pradyun/Documents/BigData/xaa.csv" AS line
+MATCH (b:Business), (u:User)
+WHERE b.business_id = line.business_id AND u.user_id = line.user_id
+CREATE (b)<-[r:RATING {review_id: line.review_id, stars: line.stars, votes_cool: line.votes_cool, votes_funny: line.votes_funny, votes_useful: line.votes_useful}]-(u);
+
+//Retrieve recommendations using Collaborative Filtering
+
+MATCH (business: Business{business_id:'KTqNU4plO23583DYAMGXYg'})<-[:RATING]-user-[:RATING]->otherbusiness<-[rating:RATING]-recommendations
+WHERE not(business = otherbusiness) AND business.cluster = otherbusiness.cluster AND business.cat_cluster = otherbusiness.cat_cluster
+RETURN avg(toInt(rating.stars)) AS recommendationsWeight, count(*) AS connectivity, recommendations.name AS name, recommendations.user_id AS uid
+ORDER BY recommendationsWeight DESC, connectivity DESC, name DESC
+LIMIT 25
