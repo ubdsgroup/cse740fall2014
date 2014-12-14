@@ -1,0 +1,71 @@
+<html>
+
+<head>
+<script type="text/javascript" src="city_name.js"></script>
+<style>
+table {
+    width:50%;
+	
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+	
+}
+th, td {
+    padding: 5px;
+    text-align: justify;
+}
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+   background-color:#fff;
+}
+table#t01 th	{
+    background-color: black;
+    color: white;
+}
+</style>
+</head>
+
+<body>
+
+<h3> Please select two movies: </h3>
+
+<select id="movie1">
+  <option value="10140793">The Green Hornet Strikes Again</option>
+  <option value="10141296">Avalanche Express</option>
+  <option value="1015585">Glitter</option>
+  <option value="10143092">Occupation</option>
+  <option value="10150450">The Dove</option>
+  <option value="10142570">Mr. Jingles</option>
+  <option value="101408">Hamlet</option>
+  <option value="1033167">Beowulf</option>
+  <option value="1024760">Winchester</option>
+  <option value="10245832">Butch and Sundance: The Early Days</option>
+</select>
+
+<select id="movie2">
+  <option value="10335706">This Time for Keeps</option>
+  <option value="10336027">The Swan Princess II: Escape from Castle Mountain</option>
+  <option value="10336083">The Busy Little Engine</option>
+  <option value="10336502">Bon Voyage</option>
+  <option value="1026452">Fantastic Voyage</option>
+  <option value="1026609">Mayor of the Sunset Strip</option>
+  <option value="101523">Jay and Silent Bob Strike Back</option>
+  <option value="10241832">The Rage</option>
+  <option value="10251251">Recaptured Love</option>
+    <option value="1033297">Resident Evil</option>
+</select>
+
+<button id="myButton" onclick="getRecommendedMovies()">SUBMIT</button>
+
+<div id="recommendations">
+
+</div>
+</div>
+
+</body>
+
+</html>
